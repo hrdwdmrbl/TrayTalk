@@ -20,7 +20,7 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
       with:
         submodules: true
 
@@ -44,12 +44,11 @@ jobs:
       run: zip -r TrayTalk.zip TrayTalk.app
       
     - name: Upload the zipped application
-      uses: actions/upload-artifact@v2.2.2
+      uses: actions/upload-artifact@v4
       with:
         # Artifact name
         name: ${{ matrix.artifact_name }}
         # A file, directory or wildcard pattern that describes what to upload
         path: ${{github.workspace}}/${{matrix.binary_path}}
         # The desired behavior if no files are found using the provided path.
-
-    
+  
