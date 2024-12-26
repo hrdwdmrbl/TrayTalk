@@ -31,7 +31,7 @@ jobs:
     - name: Build
       working-directory: ${{github.workspace}}/build
       # Execute the build.
-      run: xcodebuild -project '../TrayTalk.xcodeproj' -config Release -scheme 'TrayTalk' -archivePath ./archive archive -destination generic/platform=macOS | xcpretty
+      run: xcodebuild -project '../TrayTalk.xcodeproj' -config Release -scheme 'TrayTalk' -destination generic/platform=macOS -allowProvisioningUpdates -archivePath ./archive archive | xcpretty
 
     - name: Export archive to .app
       working-directory: ${{github.workspace}}/build
