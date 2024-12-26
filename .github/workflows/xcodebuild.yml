@@ -12,9 +12,9 @@ jobs:
   build:
     strategy:
       matrix:
-        os: ["macos-latest"]
+        os: ["macos-15"]
         include:
-          - os: macos-latest
+          - os: macos-15
             binary_path: build/TrayTalk.zip
             artifact_name: "TrayTalk.zip"
     runs-on: ${{ matrix.os }}
