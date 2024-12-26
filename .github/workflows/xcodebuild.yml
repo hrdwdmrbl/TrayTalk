@@ -1,0 +1,55 @@
+name: macOS
+
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+    branches:
+    - main
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: ["macos-latest"]
+        include:
+          - os: macos-latest
+            binary_path: build/TrayTalk.zip
+            artifact_name: "TrayTalk.zip"
+    runs-on: ${{ matrix.os }}
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        submodules: true
+
+    - name: Create build directory
+      working-directory: ${{github.workspace}}
+      run: mkdir build
+
+    - name: Build
+      working-directory: ${{github.workspace}}/build
+      # Execute the build.
+      run: xcodebuild -project '../TrayTalk.xcodeproj' -config Release -scheme 'TrayTalk' -archivePath ./archive archive | xcpretty
+
+    - name: Export archive to .app
+      working-directory: ${{github.workspace}}/build
+      # Exports the archive to a .app file
+      run: xcodebuild -exportArchive -archivePath ./archive.xcarchive -exportPath ./ -exportOptionsPlist ../exportOptions.plist | xcpretty
+      
+    - name: Zip the exported file
+      working-directory: ${{github.workspace}}/build
+      # Zip the application for easier downloading
+      run: zip -r TrayTalk.zip TrayTalk.app
+      
+    - name: Upload the zipped application
+      uses: actions/upload-artifact@v2.2.2
+      with:
+        # Artifact name
+        name: ${{ matrix.artifact_name }}
+        # A file, directory or wildcard pattern that describes what to upload
+        path: ${{github.workspace}}/${{matrix.binary_path}}
+        # The desired behavior if no files are found using the provided path.
+
+    
