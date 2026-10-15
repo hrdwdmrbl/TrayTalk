@@ -1,0 +1,17 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "smoothtalker-review-tts",
+	"account_id": "e661f76439f9a5b0e4ea031717b7f22c",
+	"main": "src/index.ts",
+	"compatibility_date": "2026-08-26",
+	"compatibility_flags": [
+		"nodejs_compat"
+	],
+	"observability": {
+		"enabled": true,
+		"head_sampling_rate": 1
+	},
+	"vars": {
+		"APP_REVIEW_DEMO_ENABLED": "true"
+	}
+}

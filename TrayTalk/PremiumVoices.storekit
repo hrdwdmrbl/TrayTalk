@@ -1,0 +1,41 @@
+{
+  "identifier" : "PremiumVoices",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "9.99",
+      "familyShareable" : false,
+      "internalID" : "premium-voices",
+      "localizations" : [
+        {
+          "description" : "Unlock all premium Google Text-to-Speech voices in Smooth Talker.",
+          "displayName" : "Premium Voices",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.kriyak.smoothtalker.premiumvoices",
+      "referenceName" : "Premium Voices",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+    "_applicationInternalID" : "smoothtalker",
+    "_developerTeamID" : "",
+    "_failTransactionsEnabled" : false,
+    "_lastSynchronizedDate" : 0,
+    "_locale" : "en_US",
+    "_storefront" : "USA",
+    "_storeKitErrors" : [
+
+    ]
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 4,
+    "minor" : 0
+  }
+}

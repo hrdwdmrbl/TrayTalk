@@ -1,0 +1,9 @@
+.DS_Store
+*.xcuserstate
+xcuserdata/
+Secrets.xcconfig
+Config/GoogleOAuth.local.xcconfig
+*.local.xcconfig
+review-tts-worker/node_modules/
+review-tts-worker/dist/
+review-tts-worker/.dev.vars

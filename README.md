@@ -1,28 +1,13 @@
-# Install and setup
+# Smooth Talker
 
-- Build in XCode.
-- Copy Traytalk.app to ~/Applications
+Smooth Talker is a macOS assistive text-to-speech app that reads selected text aloud using Google Cloud Text-to-Speech.
 
-# Permissions
+It provides assistive reading support by reading selected text aloud when the user invokes the shortcut.
 
-Requires OSX Accessibility permission.
+## Setup
 
-Note: You may have to restart it after giving it permission.
+- Build and run the app in Xcode.
+- Smooth Talker uses Automatic Setup to connect Google Cloud Text-to-Speech.
+- macOS Accessibility permission is required so Smooth Talker can read the currently selected text aloud when the user invokes the assistive shortcut.
 
-# Google Cloud Service account (json)
-
-```
-{
-  "type": "service_account",
-  "project_id": "XXX",
-  "private_key_id": "XXX",
-  "private_key": "XXX",
-  "client_email": "XXX",
-  "client_id": "XXX",
-  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-  "token_uri": "https://oauth2.googleapis.com/token",
-  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-  "client_x509_cert_url": "XXX",
-  "universe_domain": "googleapis.com"
-}
-```
+After granting Accessibility permission, you may need to restart the app.
